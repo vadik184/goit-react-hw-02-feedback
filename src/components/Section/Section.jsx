@@ -1,11 +1,9 @@
 import React from 'react';
-
-export class Section extends React.Component {
-  render() {
-    return (
-      <section>
-        <h2>Please leave feedback</h2>
-      </section>
-    );
-  }
-}
+export const Section = ({ title, children }) => {
+  return (
+    <section>
+      <h2>{title}</h2>
+      {children}
+    </section>
+  );
+};

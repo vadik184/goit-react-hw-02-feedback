@@ -1,22 +1,23 @@
 import React from 'react';
-import css from 'components/FeedbackOptions/FeedbackOptions.module.css';
 
-export class FeedbackOptions extends React.Component {
-  render() {
-    return (
-      <>
-        <div className={css['btn-container']}>
-          <button className={css.button} type="button">
-            Good
-          </button>
-          <button className={css.button} type="button">
-            Neutral
-          </button>
-          <button className={css.button} type="button">
-            Bad
-          </button>
-        </div>
-      </>
-    );
-  }
-}
+export const FeedbackOptions = ({
+  onIncrementGood,
+  onIncrementNeutral,
+  onIncrementBad,
+}) => {
+  return (
+    <>
+      <div>
+        <button type="button" onClick={onIncrementGood}>
+          Good
+        </button>
+        <button type="button" onClick={onIncrementNeutral}>
+          Neutral
+        </button>
+        <button type="button" onClick={onIncrementBad}>
+          Bad
+        </button>
+      </div>
+    </>
+  );
+};
