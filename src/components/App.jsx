@@ -3,7 +3,7 @@ import { Section } from 'components/Section/Section';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
 import { Statistics } from 'components/Statistics/Statistics';
 import { Notification } from 'components/Notification/Notification';
-
+import { StyledContainer } from 'components/AppStyle';
 export class App extends Component {
   state = {
     good: 0,
@@ -30,7 +30,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <StyledContainer>
         <Section title="Please leave feedback">
           <FeedbackOptions
             onIncrementGood={this.incrementGood}
@@ -53,7 +53,7 @@ export class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </div>
+      </StyledContainer>
     );
   }
 }

@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  StyledFeedbackButton,
+  StyledFeedbackContainer,
+} from 'components/FeedbackOptions/FeedbackOptionsstyle';
 
 export const FeedbackOptions = ({
   onIncrementGood,
@@ -7,17 +11,17 @@ export const FeedbackOptions = ({
 }) => {
   return (
     <>
-      <div>
-        <button type="button" onClick={onIncrementGood}>
+      <StyledFeedbackContainer>
+        <StyledFeedbackButton type="button" onClick={onIncrementGood}>
           Good
-        </button>
-        <button type="button" onClick={onIncrementNeutral}>
+        </StyledFeedbackButton>
+        <StyledFeedbackButton type="button" onClick={onIncrementNeutral}>
           Neutral
-        </button>
-        <button type="button" onClick={onIncrementBad}>
+        </StyledFeedbackButton>
+        <StyledFeedbackButton type="button" onClick={onIncrementBad}>
           Bad
-        </button>
-      </div>
+        </StyledFeedbackButton>
+      </StyledFeedbackContainer>
     </>
   );
 };

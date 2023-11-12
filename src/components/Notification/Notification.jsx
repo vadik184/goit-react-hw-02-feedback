@@ -1,3 +1,4 @@
+import { StyledNotyText } from 'components/Notification/NotificationStyle';
 export const Notification = ({ message }) => {
-  return <p>{message}</p>;
+  return <StyledNotyText>{message}</StyledNotyText>;
 };

@@ -1,5 +1,11 @@
 import React from 'react';
-
+import {
+  StyledList,
+  StyledListItem,
+  StyledListItemTotal,
+  StyledListItemPersetn,
+  StyledListTotal,
+} from 'components/Statistics/StatisticsStyle';
 export const Statistics = ({
   good,
   neutral,
@@ -9,16 +15,17 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      <ul>
-        <li>Good:{good}</li>
-        <li>Neutral:{neutral}</li>
-        <li>Bad:{bad}</li>
-        <li>Total:{total}</li>
-        <li>
-          Positive feedback:
-          {positivePercentage}%
-        </li>
-      </ul>
+      <StyledList>
+        <StyledListItem>Good: {good}</StyledListItem>
+        <StyledListItem>Neutral: {neutral}</StyledListItem>
+        <StyledListItem>Bad: {bad}</StyledListItem>
+      </StyledList>
+      <StyledListTotal>
+        <StyledListItemTotal>Total: {total}</StyledListItemTotal>
+        <StyledListItemPersetn>
+          Positive feedback: {positivePercentage}%
+        </StyledListItemPersetn>
+      </StyledListTotal>
     </>
   );
 };
