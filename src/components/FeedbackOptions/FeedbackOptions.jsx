@@ -4,23 +4,22 @@ import {
   StyledFeedbackContainer,
 } from 'components/FeedbackOptions/FeedbackOptionsstyle';
 
-export const FeedbackOptions = ({
-  onIncrementGood,
-  onIncrementNeutral,
-  onIncrementBad,
-}) => {
+export const FeedbackOptions = ({ options, onLeavFeedback }) => {
   return (
     <>
       <StyledFeedbackContainer>
-        <StyledFeedbackButton type="button" onClick={onIncrementGood}>
-          Good
-        </StyledFeedbackButton>
-        <StyledFeedbackButton type="button" onClick={onIncrementNeutral}>
-          Neutral
-        </StyledFeedbackButton>
-        <StyledFeedbackButton type="button" onClick={onIncrementBad}>
-          Bad
-        </StyledFeedbackButton>
+        {options.map(option => {
+          return (
+            <StyledFeedbackButton
+              type="button"
+              onClick={onLeavFeedback}
+              key={option}
+              name={option}
+            >
+              {option}
+            </StyledFeedbackButton>
+          );
+        })}
       </StyledFeedbackContainer>
     </>
   );

@@ -10,18 +10,25 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  incrementGood = () => {
-    this.setState({ good: this.state.good + 1 });
-  };
-  incrementNeutral = () => {
-    this.setState({ neutral: this.state.neutral + 1 });
+  // handlClick = options => {
+  //
+  //
+  //
+  //     }
+  //   };
+  // };
+  onLeavFeedback = evt => {
+    const { name } = evt.target;
+    this.setState(prevState => {
+      return {
+        [name]: (prevState[name] += 1),
+      };
+    });
   };
 
-  incrementBad = () => {
-    this.setState({ bad: this.state.bad + 1 });
-  };
   countTotalFeedback() {
-    return this.state.good + this.state.neutral + this.state.bad;
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
   }
 
   countPositiveFeedbackPercentage() {
@@ -33,9 +40,8 @@ export class App extends Component {
       <StyledContainer>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onIncrementGood={this.incrementGood}
-            onIncrementNeutral={this.incrementNeutral}
-            onIncrementBad={this.incrementBad}
+            onLeavFeedback={this.onLeavFeedback}
+            options={Object.keys(this.state)}
           />
         </Section>
         <Section title="Statistics">

@@ -7,7 +7,6 @@ export const MainSection = styled('section')`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 9px 10px 8px -10px rgba(0, 0, 0, 0.1);
